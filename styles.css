@@ -1,0 +1,376 @@
+/* styles.css */
+:root {
+    --mercury-color: #419EBB;
+    --venus-color: #EDA249;
+    --earth-color: #6D2ED5;
+    --mars-color: #D14C32;
+    --jupiter-color: #D83A34;
+    --saturn-color: #CD5120;
+    --uranus-color: #1EC1A2;
+    --neptune-color: #2D68F0;
+    
+    --dark-bg: #070724;
+    --dark-gray: #38384F;
+    --light-gray: #838391;
+    --white: #FFFFFF;
+    --active-color: var(--mercury-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'League Spartan', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--white);
+    background-image: url('assets/background-stars.svg');
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 16px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--light-gray);
+    position: relative;
+}
+
+h1, h2 {
+    font-family: 'Antonio', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 28px;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+}
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: none; /* Firefox */
+}
+
+nav ul::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 12px 0;
+    position: relative;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+    margin: 0 8px;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+nav a.active {
+    opacity: 1;
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--active-color);
+}
+
+.planet-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    gap: 40px;
+}
+
+.planet-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.planet-image-container img {
+    width: 60%;
+    max-width: 300px;
+    min-width: 200px;
+    animation: rotate 50s linear infinite;
+}
+
+.planet-info {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    padding: 0 16px;
+}
+
+.planet-info h2 {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.planet-info p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.source {
+    margin-bottom: 24px;
+    color: var(--light-gray);
+    font-size: 14px;
+}
+
+.source a {
+    color: var(--light-gray);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.info-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    background-color: var(--dark-gray);
+    border: 1px solid var(--light-gray);
+    color: var(--white);
+    padding: 12px 20px;
+    text-align: left;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    width: 100%;
+}
+
+.tab-btn span {
+    color: var(--light-gray);
+    font-size: 12px;
+}
+
+.tab-btn:hover {
+    background-color: var(--light-gray);
+}
+
+.tab-btn.active {
+    background-color: var(--active-color);
+    border-color: var(--active-color);
+}
+
+.tab-btn.active span {
+    color: var(--white);
+}
+
+.planet-facts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 30px;
+    padding: 0 16px;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fact-card {
+    border: 1px solid var(--light-gray);
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fact-card h3 {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 10px;
+    color: var(--light-gray);
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+.fact-card p {
+    font-family: 'Antonio', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Tablet and larger */
+@media (min-width: 640px) {
+    body {
+        padding: 24px;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 24px 0;
+    }
+
+    h1 {
+        margin-bottom: 0;
+    }
+
+    nav ul {
+        justify-content: flex-end;
+        gap: 24px;
+        padding-bottom: 0;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    .planet-facts {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .fact-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+/* Laptop and larger */
+@media (min-width: 1024px) {
+    .planet-display {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 60px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .planet-info {
+        text-align: left;
+        max-width: 400px;
+    }
+
+    .planet-image-container img {
+        max-width: 400px;
+    }
+
+    .planet-facts {
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 50px;
+    }
+}
+
+/* Desktop and larger */
+@media (min-width: 1280px) {
+    .planet-image-container img {
+        max-width: 500px;
+    }
+
+    .planet-info {
+        max-width: 500px;
+    }
+
+    .planet-info h2 {
+        font-size: 60px;
+    }
+
+    .planet-info p {
+        font-size: 16px;
+    }
+}
+
+/* Mobile menu active state */
+@media (max-width: 639px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 0;
+        margin-top: 16px;
+        border-top: 1px solid var(--light-gray);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 8px 0;
+        margin: 0;
+    }
+
+    nav a.active::after {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+}
