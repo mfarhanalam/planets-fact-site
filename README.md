@@ -43,7 +43,8 @@ planets-fact-site/
 
 | Desktop View | Mobile View |
 |--------------|-------------|
-| ![desktop preview](assets/desktop-preview.png) | ![mobile preview](assets/mobile-preview.png) |
+| ![desktop preview](assets/2.jpg) | 
+![mobile preview](assets/1.jpg) |
 
 ---
 

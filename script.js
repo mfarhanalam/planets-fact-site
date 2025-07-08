@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             radius: "3,389.5 KM",
             temp: "-28°C",
             color: "var(--mars-color)",
-            image: "assets/jupiter.png"
+            image: "assets/mars.png"
         },
         jupiter: {
             name: "JUPITER",
@@ -133,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Update planet info
         const planetData = planets[planet];
+        planetName.textContent = planetData.name;
         planetDescription.textContent = planetData.overview;
         rotationTime.textContent = planetData.rotation;
         revolutionTime.textContent = planetData.revolution;
