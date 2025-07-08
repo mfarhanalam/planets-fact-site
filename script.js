@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Update planet info
+        // planet info
         const planetData = planets[planet];
         planetName.textContent = planetData.name;
         planetDescription.textContent = planetData.overview;
@@ -167,11 +167,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const tab = this.dataset.tab;
             const activePlanet = document.querySelector('nav a.active').dataset.planet;
             
-            // Update active tab
+            // active tab
             tabButtons.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             
-            // Update content based on tab
+            // content based on tab
             if (tab === 'overview') {
                 planetDescription.textContent = planets[activePlanet].overview;
             } else if (tab === 'structure') {
